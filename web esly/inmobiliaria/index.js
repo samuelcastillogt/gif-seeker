@@ -29,7 +29,6 @@ app.get("/", async(req, res)=>{
   const peticion =  await db.collection("propiedades").get()
   const { docs } = peticion
   const propiedades = docs.map(propiedad =>({ propiedad: propiedad.data()}))
-  console.log(propiedades)
   res.render("index", { propiedades } )
     
 })
@@ -44,23 +43,67 @@ app.get("/propiedad/:id", async(req, res)=>{
    const data = {datos: datos, relacionadas: propiedades}
   res.render("propiedad", data)
 })
+app.get("/app", (req, res)=>{
+  res.render("app")
+})
 app.get("/app/crear", (req, res)=>{
-    res.render("app-crear")
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      res.render("app-crear")   // User is signed in.
+    } else {
+      res.redirect("/app")
+    }
+  });
+   
 })
 app.post("/agregar", (req, res)=>{
   const db =firebase.firestore()
   const pre = req.body.destacada
+  const img =req.body.imagen
   const pre2 = pre.toUpperCase()
   const destacada = Boolean(pre2)
+  const prep = img.substring(img.legth -1)
+  const imagen = prep.split(",")
   db.collection("propiedades").doc(req.body.id).set({
     nombre: req.body.nombre,
     precio: req.body.precio,
     descripcion: req.body.descripcion,
-    imagen: req.body.imagen,
+    imagen: imagen,
     destacada: destacada,
     id: req.body.id
 
   }).then(()=>{
     res.redirect("/app/crear")
   })
+})
+app.post("/login", (req, res)=>{
+  var email = req.body.correo
+  var password = req.body.password
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    res.redirect("/app/crear")
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+})
+app.post("/singup", (req, res)=>{
+  const auth = firebase.auth()
+  var email = req.body.correo
+  var password = req.body.password
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+    res.redirect("/app/crear")
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
 })

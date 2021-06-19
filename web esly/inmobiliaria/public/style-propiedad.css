@@ -9,7 +9,7 @@
     object-fit: cover;
 }
 .text-cabecera{
-    font-size: 3em;
+    font-size: 2em;
     position: absolute;
     bottom: 30px;
 }
@@ -30,9 +30,10 @@
     width: 300px;
     display: flex;
     flex-wrap: wrap;
+    transition: 2s;
 }
-.resto1{
-    width: 150px;
+.resto:hover{
+    width: 400px;
 }
 .galeria{
     display: flex;
@@ -62,6 +63,7 @@
     color: black;
     font-size: 1.8em;
 }
+
 @media only screen and (max-width: 700px) {
     .texto{
         width: 80%;
@@ -74,5 +76,14 @@
     .texto2{
         color: black;
         font-size: 1.8em;
+    }
+    .resto{
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        transition: 2s;
+    }
+    .resto:hover{
+        width: 100%;
     }
 }

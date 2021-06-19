@@ -27,7 +27,7 @@
         </div>
     </header>
     <div class="cabecera">
-        <img class="back-cabecera" src="<%= datos.imagen %>" alt="">
+        <img class="back-cabecera" src="<%= datos.imagen[0] %>" alt="">
         <p class="text-cabecera"><%= datos.nombre %></p>
     </div>
     <section class="descripcion">
@@ -35,13 +35,17 @@
     </section>
     <div id="mapid"></div>
     <section class="galeria">
-        <img class="img-principal"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAEFTb1a6sIvMDrH6u88cIXxjly4w4Y_J0eoHwTQgueFah4k1mA3iBdfkTksfiCh5-HXI&usqp=CAU" alt="">
-        <div class="resto">
-            <img class="resto1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOyGy9aNrJ1yr_tL4Nv9ANEV-wym34SqFTJ3HbBBoQhfxJXYKVBS3tlurNOEF6QM_Cbw&usqp=CAU" alt="">
-            <img class="resto1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOyGy9aNrJ1yr_tL4Nv9ANEV-wym34SqFTJ3HbBBoQhfxJXYKVBS3tlurNOEF6QM_Cbw&usqp=CAU" alt="">
-            <img class="resto1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOyGy9aNrJ1yr_tL4Nv9ANEV-wym34SqFTJ3HbBBoQhfxJXYKVBS3tlurNOEF6QM_Cbw&usqp=CAU" alt="">
-        </div>
-        <p class="texto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium dolores atque sit fugit veniam aliquid a quas. Eius, quis neque libero error dolorum dolore odit magnam fuga cumque, autem aut.</p>
+       
+            <% for(var i=0; i<datos.imagen.length -1; i++) { %>
+                
+                <img  class="resto"src="<%= datos.imagen[i] %>" alt="" id=`${i}`>
+                
+            <% } %>
+            
+   <style>
+       
+       
+   </style>
     </section>
     <section class="contacto">
         <div class="tarjeta-imagen">
@@ -53,6 +57,7 @@
             <p class="texto2">Email</p>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -73,7 +78,6 @@
   var marker = L.marker([14.67078475918909, -90.55725574493408]).addTo(mymap);
   marker.bindPopup(`Tu futura casa`).openPopup();
 var popup = L.popup();
-
 
     </script>
      <footer>
