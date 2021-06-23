@@ -1,3 +1,4 @@
+
 .cabecera{
     position: relative;
 }
@@ -19,20 +20,32 @@
 }
 .galeria{
     display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    white-space: nowrap;
+    align-items: center;
+    align-items: center;
+    /* overflow-y: hidden;
+    overflow: scroll; */
+    height: 350px;
     margin: 20px;
 
 }
-.img-principal{
-    width: 350px;
-    height: auto;
+/* ::-webkit-scrollbar {display: none;} */
+.galeria-carrusel{
+    width: 100%;
+    overflow: scroll;
+    overflow-y: hidden;
+    padding: 30px;
+    height: 300px;
 }
 .resto{
     width: 300px;
-    display: flex;
-    flex-wrap: wrap;
+    height: 300px;
+    display: inline-block;
     transition: 2s;
 }
-.resto:hover{
+.resto:active {
     width: 400px;
 }
 .galeria{

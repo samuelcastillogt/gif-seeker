@@ -34,13 +34,16 @@
         <p><%= datos.descripcion %></p>
     </section>
     <div id="mapid"></div>
+
     <section class="galeria">
-       
-            <% for(var i=0; i<datos.imagen.length -1; i++) { %>
+       <div class="galeria-carrusel">
+        <% for(var i=0; i<datos.imagen.length -1; i++) { %>
                 
-                <img  class="resto"src="<%= datos.imagen[i] %>" alt="" id=`${i}`>
-                
-            <% } %>
+            <img  class="resto" src="<%= datos.imagen[i] %>" alt="" id=`${i}`>
+            
+        <% } %>
+       </div>
+        
             
    <style>
        
