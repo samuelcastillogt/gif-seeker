@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header {
+  background: -webkit-gradient(linear, left top, right top, from(#a751ed), to(#c159dd));
+  background: linear-gradient(90deg, #a751ed 0%, #c159dd 100%);
+  -webkit-box-shadow: 9px 5px 5px black;
+          box-shadow: 9px 5px 5px black;
+  color: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container-search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 200px;
+  width: 100%;
+}
+
+.container-search #buscador {
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 6px 0 0 6px;
+  height: 20px;
+}
+
+.container-search #buscar {
+  background: -webkit-gradient(linear, left top, right top, from(#518bed), to(#6d59dd));
+  background: linear-gradient(90deg, #518bed 0%, #6d59dd 100%);
+  height: 44px;
+  width: 50px;
+  border-radius: 0 6px  6px 0;
+}
+
+#root {
+  display: -ms-grid;
+  display: grid;
+  width: 90%;
+  margin: 15px;
+  -ms-grid-columns: (200px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 200px);
+  overflow: hidden;
+  gap: 10px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#root img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+/*# sourceMappingURL=index.css.map */

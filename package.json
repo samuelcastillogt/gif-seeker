@@ -1,0 +1,25 @@
+{
+  "name": "gif-seeker",
+  "version": "1.0.0",
+  "description": "Buscador de Gifs basado en el curso de \"Como conseguir empleo en Frontend\" de Platzi.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelcastillogt/gif-seeker.git"
+  },
+  "keywords": [
+    "gifs",
+    "API",
+    "Giphy",
+    "Platzi"
+  ],
+  "author": "Samuel Castillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuelcastillogt/gif-seeker/issues"
+  },
+  "homepage": "https://github.com/samuelcastillogt/gif-seeker#readme"
+}
